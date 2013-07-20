@@ -1,0 +1,41 @@
+body, div, table, td, th,img, ul, li, p, h1, h2, h3, h4,
+fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+    list-style: none;
+    background-color: #fff;
+    font: 12px Helvetica, Arial, sans-serif;
+    color: #2d2d2d;
+}
+
+body {
+	text-align: center;
+	margin: 50px;
+}
+
+h1 {
+	width: 800px;
+	margin: 10px auto;
+	text-align: left;
+	font-size: 2em;
+}
+
+a {
+	text-decoration: none;
+}
+
+.bigbutton {
+	width: 800px;
+	margin: 10px auto;
+	text-align: center;
+	font-size: 3em;
+	border: 3px solid #333;
+	text-decoration: none;
+}
+	
+.bigbutton:hover {
+	background-color: #666;
+	color: #ccc;
+}
