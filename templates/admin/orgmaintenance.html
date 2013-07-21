@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Highrock Brookline Rideshare</title>
+		<link rel="stylesheet" href="/css/home.css" type="text/css" />
+	</head>
+	<body>
+		<h1>New organization:</h1>
+		<form name="f" id="f" method="POST">
+			<div class="formentry">
+				<div class="formlabel">
+					<label for="key" id="keylabel">Key (letters/underscore only):</label>
+				</div>
+				<div class="formvalue">
+					<input type="text" maxlength="20" value="" name="key" id="key" />
+				</div>
+			</div>
+			<div class="formentry">
+				<div class="formlabel">
+					<label for="name" id="namelabel">Organization Name:</label>
+				</div>
+				<div class="formvalue">
+					<input type="text" maxlength="50" value="" name="name" id="name" />
+				</div>
+			</div>
+			<div class="formentry">
+				<div class="formlabel">
+					<label for="city" id="citylabel">City (include state if applicable):</label>
+				</div>
+				<div class="formvalue">
+					<input type="text" maxlength="50" value="Brookline, MA" name="city" id="city" />
+				</div>
+			</div>
+			<div class="formentry">
+				<div class="formlabel">
+					<label for="country" id="countrylabel">Country (2-letter code):</label>
+				</div>
+				<div class="formvalue">
+					<input type="text" maxlength="2" value="US" name="country" id="country" />
+				</div>
+			</div>
+			<input type="submit" id="submit" value="Submit" />
+		</form>
+	</body>
+</html>
+	

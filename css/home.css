@@ -1,3 +1,7 @@
+html {
+	height: 100%;
+}
+
 body, div, table, td, th,img, ul, li, p, h1, h2, h3, h4,
 fieldset, form, label, legend {
     margin: 0;
@@ -5,12 +9,12 @@ fieldset, form, label, legend {
     border: none;
     border-collapse: collapse;
     list-style: none;
-    background-color: #fff;
     font: 12px Helvetica, Arial, sans-serif;
     color: #2d2d2d;
 }
 
 body {
+	height: 100%;
 	text-align: center;
 	margin: 50px;
 }
@@ -38,4 +42,7 @@ a {
 .bigbutton:hover {
 	background-color: #666;
 	color: #ccc;
+}
+
+#map-canvas {
 }

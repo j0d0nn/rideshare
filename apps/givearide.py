@@ -10,5 +10,6 @@ class GiveARidePage(webapp2.RequestHandler, RequireLoginMixin, UtilityMixin):
         user = users.get_current_user()
         template_values = {
             'name': user.nickname(),
+            'org': self.argument,
         }
         self.run_template('givearide.html', template_values)

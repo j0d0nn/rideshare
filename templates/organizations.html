@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Highrock Brookline Rideshare</title>
+		<link rel="stylesheet" href="/css/home.css" type="text/css" />
+	</head>
+	<body>
+		<h1>Hello, {{ name }}.  What church are you affiliated with?</h1>
+		<form name="f" id="f" action="/orgselection" method="POST">
+			<select name="org" id="org">
+			  {% for org in orgs %}
+			  <option value="{{ org.key }}">{{ org.name }}</option>
+			  {% endfor %}
+			</select>
+			
+			<input type="submit" id="submit" value="Submit" />
+		</form>
+	</body>
+</html>
+	

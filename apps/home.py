@@ -10,5 +10,6 @@ class HomePage(webapp2.RequestHandler, RequireLoginMixin, UtilityMixin):
         user = users.get_current_user()
         template_values = {
             'name': user.nickname(),
+            'org': self.argument,
         }
         self.run_template('index.html', template_values)
