@@ -24,12 +24,6 @@ class RequireLoginMixin:
         return True
     
     
-class RequireAdminMixin(RequireLoginMixin):
-    AUTHORIZED_USERS = ['j0d0nn', 'jodonn']
-    
+class RequireAdminMixin(RequireLoginMixin):    
     def is_authorized(self, user):
-        if user:
-            nick = user.nickname()
-            if nick in self.AUTHORIZED_USERS:
-                return True
-        return False
+        return user and users.is_current_user_admin()
