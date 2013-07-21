@@ -33,8 +33,7 @@ class AdminOrgMaintenancePage(webapp2.RequestHandler, RequireAdminMixin, Utility
         self.response.out.write("Organization '%s' saved with key '%s'" % (name, key))
         
     def save_org(self, key, name, city, country):
-        org = Organization()
-        org.key = key
+        org = Organization(id=key)
         org.name = name
         org.city = city
         org.country = country

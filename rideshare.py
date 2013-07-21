@@ -5,6 +5,7 @@ from apps.needaride import NeedARidePage
 from apps.givearide import GiveARidePage
 from apps.orgselection import OrgSelectionPage
 from apps.addresscheck import AddressCheckAjax
+from apps.savedriver import SaveDriverAjax
 
 from apps.admin.orgmaintenance import AdminOrgMaintenancePage
             
@@ -18,6 +19,7 @@ application = webapp2.WSGIApplication([
                  
                  # ajax servlets
                  (r'/(\w+)/addresscheck', AddressCheckAjax),
+                 (r'/(\w+)/savedriver', SaveDriverAjax),
                  
                  # admin stuff
                  (r'/admin/orgs', AdminOrgMaintenancePage),

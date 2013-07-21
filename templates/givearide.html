@@ -1,2 +1,52 @@
 <!DOCTYPE html>
-I have rides to offer.
+<html>
+	<head>
+		<title>Highrock Brookline Rideshare</title>
+		<link rel="stylesheet" href="/css/home.css" type="text/css" />
+	</head>
+	<body>
+		<div id="formdata">
+			<h1>Great!  We just need a little information from you.  We'll need to store your email, location, and number of available seats.</h1>
+			<div class="formentry">
+				<div class="formlabel">
+					<label for="address" id="addresslabel">Address:</label>
+				</div>
+				<div class="formvalue">
+					<textarea rows="3" cols="50" name="address" id="address">345 Harvard St
+Brookline, MA 02446</textarea>
+				</div>
+			</div>
+			<div class="formentry">
+				<div class="formlabel">
+					<label for="seats" id="seatslabel">Number of available seats in your car:</label>
+				</div>
+				<div class="formvalue">
+					<select name="seats" id="seats">
+						<option value="1" selected="selected">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+			</div>
+			<input type="submit" id="submit" value="Submit" />
+			<div id="error" class="error"></div>
+		</div>
+		<div id="confirmdata">
+			<div id="summary"></div>
+			<div id="map-canvas" style="width: 800px; height: 480px;"></div>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBq9H7LusdmzSwLwDKTkyC-luWxI-C2nU&v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="/js/addresscheck.js"></script>
+	<script type="text/javascript" src="/js/giveride.js"></script>
+</html>
+	

@@ -9,7 +9,7 @@
 		<form name="f" id="f" action="/orgselection" method="POST">
 			<select name="org" id="org">
 			  {% for org in orgs %}
-			  <option value="{{ org.key }}">{{ org.name }}</option>
+			  <option value="{{ org.key.id }}">{{ org.name }}</option>
 			  {% endfor %}
 			</select>
 			

@@ -9,11 +9,15 @@ var AddressCheck = {
 	_userMarker: null,
 	_infoWindow: new google.maps.InfoWindow(),
 	
+	getCoordinates: function() {
+		return AddressCheck._mapOptions.center;
+	},
+	
 	check: function() {
-		AddressCheck._setError('');
+		AddressCheck.setError('');
 		var address = $.trim($('#address').val());
 		if (!address) {
-			AddressCheck._setError('No address was supplied.');
+			AddressCheck.setError('No address was supplied.');
 			return;
 		}
 		
@@ -49,12 +53,12 @@ var AddressCheck = {
 				AddressCheck._userMarker.setPosition(AddressCheck._mapOptions.center);
 		    } 
 			else {
-		        AddressCheck._setError("Geocode was not successful for the following reason: " + status);
+		        AddressCheck.setError("Geocode was not successful for the following reason: " + status);
 		    }			
 		});
 	},
 	
-	_setError: function(html) {
+	setError: function(html) {
 		$('#error').html(html);
 	},
 	
@@ -63,7 +67,7 @@ var AddressCheck = {
 	},
 	
 	_handleError: function(data) {
-		AddressCheck._setError('There was an error checking the address: ' + data.statusText);
+		AddressCheck.setError('There was an error checking the address: ' + data.statusText);
 	}
 	
 		
