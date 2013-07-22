@@ -51,6 +51,10 @@ var AddressCheck = {
 				}
 				// update the marker position if the marker was already in place
 				AddressCheck._userMarker.setPosition(AddressCheck._mapOptions.center);
+				// after the map boundaries change, this should fire
+				google.maps.event.addListener(AddressCheck._map, 'idle', function() {
+					if (DriverSearch)  DriverSearch.findNearbyDrivers(AddressCheck._mapOptions.center, AddressCheck._map);
+				});
 		    } 
 			else {
 		        AddressCheck.setError("Geocode was not successful for the following reason: " + status);

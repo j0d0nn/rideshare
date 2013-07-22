@@ -32,10 +32,31 @@ class Organization(ndb.Model):
     
 class Driver(ndb.Model):
     email = ndb.StringProperty(indexed=False)
-    lat = ndb.FloatProperty(indexed=False)
-    lng = ndb.FloatProperty(indexed=False)
+    lat = ndb.FloatProperty(indexed=True)
+    lng = ndb.FloatProperty(indexed=True)
     seats = ndb.IntegerProperty(indexed=False)
     created = ndb.DateTimeProperty(auto_now_add=True)
+    
+    def to_dict(self):
+        return { 
+            'email': self.email,
+            'lat': self.lat,
+            'lng': self.lng,
+            'seats': self.seats
+        }
+        
+    @staticmethod
+    def get_by_bounds(org, nelat, nelng, swlat, swlng):
+        # ndb doesn't support inequality queries on more than one property, so we'll start with the lats and then
+        # filter on the longs as they come in
+        qry = Driver.query(ancestor = Organization.organization_key(org))
+        
+        # it'd be better to do the filter here, but I can't get it to work
+        drivers = qry.fetch()
+
+        # now filter the longs
+        drivers = [d for d in drivers if d.lng > swlng and d.lng < nelng and d.lat > swlat and d.lat < nelat]
+        return drivers
     
     @staticmethod
     def get_by_id(org, id):
@@ -44,3 +65,4 @@ class Driver(ndb.Model):
     @staticmethod
     def driver_key(org, id):
         return ndb.Key(pairs = [(Organization, org), (Driver, id)])
+    

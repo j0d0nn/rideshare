@@ -31,7 +31,9 @@ var GiveRide = {
 	},
 	
 	saveMessage: function(data) {
-		AddressCheck.setError('All set!  Thanks for your willingness to serve!');
+		$('#formdata').hide();
+		$('#confirmdata').hide();
+		$('#thanks').html('All set!  Thanks for your willingness to serve!');
 	},
 	
 	errorMessage: function(data) {
