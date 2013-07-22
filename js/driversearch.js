@@ -31,7 +31,7 @@ var DriverSearch = {
 	        
 	        var message = '\
 	        	<div class="driverdesc">\
-	        		<div class="seatcount">This driver has ' + driver.seats + (driver.seats > 1 ? " seats" : " seat") + ' available.</div>\
+	        		<div class="seatcount">This driver has <b>' + driver.seats + (driver.seats > 1 ? " seats" : " seat") + '</b> available.</div>\
 	        		<div class="contact">To request a ride, email <a href="mailto:' + driver.email + '">' + driver.email + '</a></div>\
 	        	</div>';
 	        google.maps.event.addListener(marker, 'click', (function(marker, message) {
