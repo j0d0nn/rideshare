@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Highrock Brookline Rideshare</title>
+		<link rel="stylesheet" href="/css/home.css" type="text/css" />
+	</head>
+	<body>
+		<div id="formdata">
+			<h1>OK, we'll remove you from the system and you won't appear on the map anymore.  OK?</h1>
+			<input type="button" id="save" value="Please do" onclick="GiveRide.remove()" />
+			<input type="button" id="back" value="No! I've had a change of heart" onclick="GiveRide.cancelRemove()" />
+		</div>
+		<div id="thanks"></div>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBq9H7LusdmzSwLwDKTkyC-luWxI-C2nU&v=3.exp&sensor=false"></script>
+		<script type="text/javascript" src="/js/addresscheck.js"></script>
+		<script type="text/javascript" src="/js/giveride.js"></script>
+	</body>
+</html>
+	

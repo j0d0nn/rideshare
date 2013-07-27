@@ -25,15 +25,28 @@ var GiveRide = {
 				'long': latlng.lng(),
 				'seats': seats
 			},
-			success: GiveRide.saveMessage,
+			success: function() { GiveRide.setMessage('All set!  Thanks for your willingness to serve!'); },
 			error: GiveRide.errorMessage
 		});
 	},
 	
-	saveMessage: function(data) {
+	remove: function() {
+		$.ajax({
+			url: 'removedriver',
+			method: 'POST',
+			success: function() { GiveRide.setMessage('OK, you have been removed from the system.'); },
+			error: function(data) { GiveRide.setMessage('Whoops, there was a problem removing you from the system: ' + data.statusText); }
+		});
+	},
+	
+	cancelRemove: function() {
+		this.setMessage('OK, we\'ll leave you where you are.');
+	},
+	
+	setMessage: function(msg) {
 		$('#formdata').hide();
 		$('#confirmdata').hide();
-		$('#thanks').html('All set!  Thanks for your willingness to serve!');
+		$('#thanks').html(msg);		
 	},
 	
 	errorMessage: function(data) {

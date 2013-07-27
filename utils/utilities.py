@@ -66,3 +66,7 @@ class Driver(ndb.Model):
     def driver_key(org, id):
         return ndb.Key(pairs = [(Organization, org), (Driver, id)])
     
+    @staticmethod
+    def remove(org, id):
+        driver = Driver.driver_key(org, id).delete()
+        
