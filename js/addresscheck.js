@@ -29,7 +29,7 @@ var AddressCheck = {
 			if (status == google.maps.GeocoderStatus.OK) {
 				// remember the address coordinates
 				AddressCheck._mapOptions.center = results[0].geometry.location;
-				
+				$('#map-canvas').show();
 				// initialize the map
 				if (null == AddressCheck._map) {
 					AddressCheck._map = new google.maps.Map(document.getElementById("map-canvas"), AddressCheck._mapOptions);
